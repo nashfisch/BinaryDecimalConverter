@@ -18,7 +18,7 @@ def switchRep():
         entryPrompt.config(text = 'Enter a decimal number: ')
 
 def getEntry():
-    return field.get()
+    return int(field.get())
 
 # Function to switch a decimal number into binary
 def conversion(num):
@@ -26,7 +26,7 @@ def conversion(num):
         binRep = 0
         base = 1
 
-        while int(num) > 0:
+        while num > 0:
             rem = num % 2
             binRep += rem * base
             num //= 2
@@ -38,7 +38,7 @@ def conversion(num):
         bit = 0
         decRep = 0
         i = 0
-        while int(num) > 0:
+        while num > 0:
             bit = num % 10
             if bit == 1 or bit == 0:
                 decRep += bit * 2 ** i
