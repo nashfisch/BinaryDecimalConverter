@@ -44,6 +44,9 @@ def conversion(num):
                 decRep += bit * 2 ** i
                 num //= 10
                 i += 1
+            else:
+                answer.config(text = 'Number must be binary.')
+                return -1
         answer.config(text = decRep)
 
 
