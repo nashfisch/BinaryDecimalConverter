@@ -26,25 +26,25 @@ def conversion(num):
         binRep = 0
         base = 1
 
-        while num > 0:
+        while int(num) > 0:
             rem = num % 2
             binRep += rem * base
             num //= 2
             base *= 10
 
-        return binRep
+        answer.config(text = binRep)
 
     elif binary == True:
         bit = 0
         decRep = 0
         i = 0
-        while num > 0:
+        while int(num) > 0:
             bit = num % 10
             if bit == 1 or bit == 0:
                 decRep += bit * 2 ** i
                 num //= 10
                 i += 1
-        return decRep
+        answer.config(text = decRep)
 
 
 
@@ -53,6 +53,8 @@ def conversion(num):
 entryPrompt = tk.Label(root, text = 'Enter a decimal number: ')
 entryPrompt.grid(column = 0, row = 1)
 
+answer = tk.Label(root)
+answer.grid(column = 3, row = 1)
 
 field = tk.Entry(root, width = 10)
 field.grid(column = 1, row = 1)
